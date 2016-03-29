@@ -192,9 +192,9 @@ baticon:set_image(beautiful.baticon)
 
 batwidget = wibox.widget.textbox()
 if conf.battery == false then
-   vicious.register( batwidget, vicious.widgets.bat, '<span background="#92B0A0" font="'.. conf.font ..'"><span font="'.. conf.font ..'" color="#FFFFFF" background="#92B0A0">$1</span></span>', 30, "BAT0" )
+   vicious.register( batwidget, vicious.widgets.bat, '<span background="#92B0A0" font="'.. conf.font ..'"><span font="'.. conf.font ..'" color="#FFFFFF" background="#92B0A0">$1 </span></span>', 30, conf.batt_name )
 else
-   vicious.register( batwidget, vicious.widgets.bat, '<span background="#92B0A0" font="'.. conf.font ..'"><span font="'.. conf.font ..'" color="#FFFFFF" background="#92B0A0">$1$2% </span></span>', 30, "BAT0" )
+   vicious.register( batwidget, vicious.widgets.bat, '<span background="#92B0A0" font="'.. conf.font ..'"><span font="'.. conf.font ..'" color="#FFFFFF" background="#92B0A0">$1$2% </span></span>', 30, conf.batt_name )
 end
 
 --{{---| File Size widget |-----
