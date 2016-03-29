@@ -2,9 +2,12 @@ default_profile = "chronos"
 
 [profiles]
 [profiles.chronos]
+font = "Inconsolata 11"
 battery = false
 if_wired = "em1"
 if_wlan = ""
+fs_mon = "/home"
+alsa_name = "Master"
 [profiles.work]
 battery = false
 if_wired = "eth0"
