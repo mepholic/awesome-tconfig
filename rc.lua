@@ -231,7 +231,7 @@ end, 10, conf.alsa_name)
 --{{---| CPU / sensors widget |-----------
 cpuwidget = wibox.widget.textbox()
 vicious.register(cpuwidget, vicious.widgets.cpu,
-'<span background="#4B696D" font="'.. conf.font ..'"> <span font="'.. conf.font ..'" color="#DDDDDD">$2%<span color="#888888">·</span>$3% </span></span>', 5)
+'<span background="#4B696D" font="'.. conf.font ..'"> <span font="'.. conf.font ..'" color="#DDDDDD">$1% </span></span>', 5)
 
 cpuicon = wibox.widget.imagebox()
 cpuicon:set_image(beautiful.cpuicon)
