@@ -13,10 +13,5 @@ config = toml.parse(config_raw)
 
 -- Put together public interface
 local tconfig = {}
-
-local dprofile = config.default_profile
-
 tconfig.profile = config.profiles
-tconfig.default = config.profiles.dprofile
-
 return tconfig
