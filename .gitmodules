@@ -1,0 +1,3 @@
+[submodule "lua-toml"]
+	   path = lua-toml
+	   url = https://github.com/jonstoler/lua-toml.git
