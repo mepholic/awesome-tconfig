@@ -47,8 +47,10 @@ end
 
 --{{---| Theme | -------------------------------------
 
--- Todo:  Please change the "ep" to your $USER
+-- Set the config directory
 config_dir = (conf.cfg_dir)
+
+-- if the path starts with a /, treat it as absolute
 if string.find(conf.theme_dir, "/") == 1 then
    themes_dir = (conf.theme_dir)
 else
@@ -58,12 +60,12 @@ end
 beautiful.init(themes_dir .. conf.theme_script)
 
 -- This is used later as the default terminal, browser and editor to run.
-terminal = "urxvt256c"
-editor = os.getenv("EDITOR") or "emacs"
+terminal = conf.terminal
+editor = os.getenv("EDITOR") or conf.editor
 editor_cmd = terminal .. " -e " .. editor
-browser = "google-chrome"
+browser = conf.browser
 
-font = "Inconsolata 11"
+font = conf.font
 
 -- {{ These are the power arrow dividers/separators }} --
 arr1 = wibox.widget.imagebox()
@@ -101,6 +103,7 @@ local layouts =
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
+    awful.layout.suit.max
 }
 -- }}}
 
@@ -117,7 +120,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "web", "terminal", "chat", "misc", "misc"}, s, layouts[1])
+    tags[s] = awful.tag(conf.tags[s], s, layouts[1])
 end
 -- }}}
 
