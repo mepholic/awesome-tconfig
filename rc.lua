@@ -581,7 +581,7 @@ awful.rules.rules = {
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
-awesome.connect_signal("manage", function (c, startup)
+client.connect_signal("manage", function (c, startup)
     -- Enable sloppy focus
     c:connect_signal("mouse::enter", function(c)
         if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
@@ -648,25 +648,6 @@ awesome.connect_signal("manage", function (c, startup)
     end
 end)
 
--- {{ Function to ensure that certain programs only have one
--- instance of themselves when i restart awesome
-
-function run_once(cmd)
-        findme = cmd
-        firstspace = cmd:find(" ")
-        if firstspace then
-                findme = cmd:sub(0, firstspace-1)
-        end
-        awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
-
--- {{ I need redshift to save my eyes }} -
-run_once("redshift -l 49.26:-123.23")
-awful.util.spawn_with_shell("xmodmap ~/.speedswapper")
-
--- {{ Turns off the terminal bell }} --
-awful.util.spawn_with_shell("/usr/bin/xset b off")
-
-awesome.connect_signal("focus", function(c, startup) c.border_color = beautiful.border_focus end)
-awesome.connect_signal("unfocus", function(c, startup) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
