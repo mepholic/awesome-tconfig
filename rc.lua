@@ -95,6 +95,9 @@ arr9:set_image(beautiful.arr9)
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
+-- Autostart
+loadfile("autostart.lua")
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
@@ -443,6 +446,13 @@ awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Mast
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+    -- Applications
+    awful.key({ modkey, "Control" }, "Delete",
+       function ()
+	  awful.util.spawn("sync")
+	  awful.util.spawn("xautolock -locknow")
+    end),
+    
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
