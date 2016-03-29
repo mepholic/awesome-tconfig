@@ -28,6 +28,7 @@ end
 -- Autoload Here
 awful.util.spawn_with_shell("xrandr ~/.Xdefaults")
 awful.util.spawn_with_shell("xmodmap ~/.Xmodmap")
-awful.util.spawn_with_shell("xrandr --output DVI-I-1 --auto --right-of HDMI-1 --auto --primary")
-awful.util.spawn_with_shell(conf.cfg_dir .. "bin/locker.sh")
+awful.util.spawn_with_shell("xrandr --output HDMI-1 --auto --left-of DVI-I-1 --auto")
+awful.util.spawn_with_shell("xrandr --output HDMI-1 --primary")
+run_once("xautolock", "-detectsleep -time 5 -locker \"i3lock -t -i ".. conf.cfg_dir .."res/EagleNebula.png\" -notify 30 -notifier \"notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'\"")
 run_once("nm-applet")

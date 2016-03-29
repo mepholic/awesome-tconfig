@@ -1,6 +1,7 @@
 default_profile = "chronos"
 
 [profiles]
+
 [profiles.chronos]
 cfg_dir = "/home/mepholic/.config/awesome/"
 theme_dir = "powerarrowf/"
@@ -14,8 +15,9 @@ fs_mon = "/home"
 if_wired = "em1"
 if_wlan = ""
 alsa_name = "Master"
+
 [profiles.work]
-cfg_dir = "/home/meph/.config/awesome/"
+cfg_dir = "/home/dtheisen/.config/awesome/"
 theme_dir = "powerarrowf/"
 theme_script = "theme.lua"
 browser = "google-chrome"
@@ -27,4 +29,5 @@ fs_mon = "/"
 if_wired = "eth0"
 if_wlan = ""
 alsa_name = "Master"
-tags = [ ["term", "term", "voip", "remote", "misc", "misc"], ["web", "mail", "bim", "slack", "misc", "misc"] ]
+tags = [ [ "web", "mail", "bim", "slack", "misc", "misc" ], [ "term", "term", "voip", "remote", "misc", "misc" ] ]
+wallpaper = [ "SpaceStationPanelsEVAEarth.jpg", "/home/dtheisen/.config/awesome/res/SpaceSlothSunglasses.jpg" ]

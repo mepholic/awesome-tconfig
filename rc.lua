@@ -96,7 +96,7 @@ arr9:set_image(beautiful.arr9)
 modkey = "Mod4"
 
 -- Autostart
-loadfile("autostart.lua")
+dofile(conf.cfg_dir .. "/autostart.lua")
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
@@ -111,10 +111,12 @@ local layouts =
 -- }}}
 
 -- {{{ Wallpaper
+--if conf.wallpaper then
 if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-    end
+   for s = 1, screen.count() do
+      -- gears.wallpaper.maximized(conf.wallpaper, s, true)
+      gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+   end
 end
 -- }}}
 
@@ -447,10 +449,9 @@ awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Mast
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Applications
-    awful.key({ modkey, "Control" }, "Delete",
-       function ()
-	  awful.util.spawn("sync")
-	  awful.util.spawn("xautolock -locknow")
+    awful.key({ modkey, "Control" }, "Delete", function ()
+	  awful.util.spawn_with_shell("sync")
+	  awful.util.spawn_with_shell("xautolock -locknow")
     end),
     
     -- Prompt
