@@ -1,0 +1,11 @@
+default_profile = "chronos"
+
+[profiles]
+[profiles.chronos]
+battery = false
+if_wired = "em1"
+if_wlan = ""
+[profiles.work]
+battery = false
+if_wired = "eth0"
+if_wlan = ""
