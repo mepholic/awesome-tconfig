@@ -4,7 +4,7 @@ require("awful.autofocus")
 
 -- mepholic's stuff
 local tconfig = require("tconfig")
-conf = tconfig.profile.work
+conf = tconfig.profile.chronos
 
 -- Run Once
 function run_once(prg,arg_string,pname,screen)

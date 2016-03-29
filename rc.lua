@@ -15,7 +15,7 @@ local vicious = require("vicious")
 -- mepholic's stuff
 local tconfig = require("tconfig")
 
-conf = tconfig.profile.work
+conf = tconfig.profile.chronos
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

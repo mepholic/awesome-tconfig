@@ -10,11 +10,13 @@ browser = "google-chrome"
 editor = "emacs"
 terminal = "urxvt256c"
 font = "Inconsolata 11"
-battery = false
+batt_name = ""
 fs_mon = "/home"
 if_wired = "em1"
 if_wlan = ""
 alsa_name = "Master"
+tags = [ [ "web", "mail", "chat", "misc", "misc", "misc" ] ]
+wallpaper = [ "SpaceStationPanelsEVAEarth.jpg", "/home/dtheisen/.config/awesome/res/SpaceSlothSunglasses.jpg" ]
 
 [profiles.work]
 cfg_dir = "/home/dtheisen/.config/awesome/"

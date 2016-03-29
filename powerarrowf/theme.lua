@@ -5,7 +5,7 @@
 -- mepholic's stuff
 local tconfig = require("tconfig")
 
-conf = tconfig.profile.work
+conf = tconfig.profile.chronos
 
 
 theme = {}
