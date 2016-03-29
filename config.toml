@@ -24,7 +24,6 @@ browser = "google-chrome"
 editor = "emacs"
 terminal = "urxvt"
 font = "Incognito 11"
-battery = false
 batt_name = ""
 fs_mon = "/"
 if_wired = "eth0"
