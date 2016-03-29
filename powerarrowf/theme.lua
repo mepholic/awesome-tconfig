@@ -2,10 +2,16 @@
 -- Default awesome theme --
 ---------------------------
 
+-- mepholic's stuff
+local tconfig = require("tconfig")
+
+conf = tconfig.profile.work
+
+
 theme = {}
 
 -- Todo:  Change the $USER to yourself.
-pathToConfig = "/home/mepholic/.config/awesome/"
+pathToConfig = conf.cfg_dir
 
 theme.font          = "sans 8"
 

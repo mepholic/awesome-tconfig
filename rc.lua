@@ -15,7 +15,7 @@ local vicious = require("vicious")
 -- mepholic's stuff
 local tconfig = require("tconfig")
 
-conf = tconfig.profile.chronos
+conf = tconfig.profile.work
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -48,10 +48,14 @@ end
 --{{---| Theme | -------------------------------------
 
 -- Todo:  Please change the "ep" to your $USER
-config_dir = ("/home/mepholic/.config/awesome/")
-themes_dir = (config_dir .. "/powerarrowf")
-
-beautiful.init(themes_dir .. "/theme.lua")
+config_dir = (conf.cfg_dir)
+if string.find(conf.theme_dir, "/") == 1 then
+   themes_dir = (conf.theme_dir)
+else
+   themes_dir = (config_dir .. conf.theme_dir)
+end
+   
+beautiful.init(themes_dir .. conf.theme_script)
 
 -- This is used later as the default terminal, browser and editor to run.
 terminal = "urxvt256c"
