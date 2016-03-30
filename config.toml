@@ -1,8 +1,5 @@
-default_profile = "chronos"
 
-[profiles]
-
-[profiles.chronos]
+[default_profile]
 cfg_dir = "/home/mepholic/.config/awesome/"
 theme_dir = "powerarrowf/"
 theme_script = "theme.lua"
@@ -12,28 +9,29 @@ browser = "google-chrome"
 editor = "emacs"
 terminal = "urxvt256c"
 font = "Inconsolata 11"
-batt_name = ""
+batt_name = "BAT0"
 fs_mon = "/home"
+if_wired = "eth0"
+if_wlan = "wlan0"
+alsa_name = "Master"
+tags = [ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ]
+wallpaper = [ "/home/mepholic/.config/awesome/res/candy_bean_wallpaper.jpg" ]
+
+
+[profiles]
+
+[profiles.chronos]
+batt_name = ""
 if_wired = "em1"
 if_wlan = ""
-alsa_name = "Master"
 tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
 
 [profiles.work]
 cfg_dir = "/home/dtheisen/.config/awesome/"
-theme_dir = "powerarrowf/"
-theme_script = "theme.lua"
-panel_size = "16p"
-panel_pos = "top"
-browser = "google-chrome"
-editor = "emacs"
 terminal = "urxvt"
-font = "Incognito 11"
 batt_name = ""
 fs_mon = "/"
-if_wired = "eth0"
 if_wlan = ""
-alsa_name = "Master"
 tags = [ [ "web", "mail", "bim", "slack", "misc", "misc" ], [ "term", "term", "voip", "remote", "misc", "misc" ] ]
 wallpaper = [ "/home/dtheisen/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg", "/home/dtheisen/.config/awesome/res/SpaceSlothSunglasses.jpg" ]

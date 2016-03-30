@@ -9,9 +9,24 @@ local config_raw = io.read("*all")
 io.close(config_fd)
 
 -- Parse YAML config
-config = toml.parse(config_raw)
+local config = toml.parse(config_raw)
+
+-- Default Profile
+local default_profile = config.default_profile
+
+-- Bind profile tables to default profile
+bind_table = { }
+bind_table.__index = function(t,k)
+   return default_profile[k]
+end
+
+for p in pairs(config.profiles) do
+   -- Bind the profiles
+   setmetatable(config.profiles[p], bind_table)
+end
 
 -- Put together public interface
 local tconfig = {}
 tconfig.profile = config.profiles
+--local tconfig = config
 return tconfig
