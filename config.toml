@@ -18,13 +18,13 @@ if_wired = "em1"
 if_wlan = ""
 alsa_name = "Master"
 tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
-wallpaper = [ "/home/mepholic/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg", "/home/mepholic/.config/awesome/res/SpaceSlothSunglasses.jpg" ]
+wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
 
 [profiles.work]
 cfg_dir = "/home/dtheisen/.config/awesome/"
 theme_dir = "powerarrowf/"
 theme_script = "theme.lua"
-panel_size = "16"
+panel_size = "16p"
 panel_pos = "top"
 browser = "google-chrome"
 editor = "emacs"

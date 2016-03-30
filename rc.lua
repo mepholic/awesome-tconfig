@@ -96,7 +96,7 @@ arr9:set_image(beautiful.arr9)
 modkey = "Mod4"
 
 -- Autostart
-dofile(conf.cfg_dir .. "/autostart.lua")
+dofile(conf.cfg_dir .. "autostart.lua")
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
@@ -111,11 +111,9 @@ local layouts =
 -- }}}
 
 -- {{{ Wallpaper
---if conf.wallpaper then
-if beautiful.wallpaper then
+if conf.wallpaper then
    for s = 1, screen.count() do
-      -- gears.wallpaper.maximized(conf.wallpaper, s, true)
-      gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+      gears.wallpaper.maximized(conf.wallpaper[s], s, true)
    end
 end
 -- }}}
