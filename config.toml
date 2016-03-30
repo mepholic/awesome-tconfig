@@ -25,6 +25,15 @@ if_wired = "em1"
 tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
 
+[profiles.darklord]
+terminal = "urxvt"
+fs_mon = "/"
+if_wired = "eth0"
+if_wlan = "wlan0"
+batt_name = "BAT1"
+tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
+wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
+
 [profiles.work]
 cfg_dir = "/home/dtheisen/.config/awesome/"
 terminal = "urxvt"
