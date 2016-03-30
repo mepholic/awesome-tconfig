@@ -32,7 +32,7 @@ Other profiles can be created, based on the default profile; any variable not se
 
 In this example, we'll write a default config and two profiles to config.toml
 
-'''
+```toml
 [default_profile]
 cfg_dir = "/home/user/.config/awesome/"
 theme_dir = "powerarrowf/"
@@ -64,11 +64,11 @@ wallpaper = [ "/home/yoda/.config/awesome/res/screen1.jpg", "/home/yoda/.config/
 cfg_dir = "/home/luke/.config/awesome/"
 theme_dir = "dark-side/"
 wallpaper = [ "/home/luke/.config/awesome/res/default.jpg" ]
-'''
+```
 
 These pieces of configuration data are mapped into rc.lua in a very simple manner.
 
-'''lua
+```lua
 -- mepholic's stuff
 local tconfig = require("tconfig")
 local default_profile = tconfig.default_profile
@@ -82,7 +82,7 @@ if env_profile ~= nil then
 else
    conf = default_profile
 end
-'''
+```
 
 Adding the above code near the top of any lua file that needs tconfig data should allow the file to use the current AWESOME_PROFILE, however this can be modified if necessary.
 
