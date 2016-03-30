@@ -13,9 +13,32 @@ local menubar = require("menubar")
 local vicious = require("vicious")
 
 -- mepholic's stuff
+local conf = { }
 local tconfig = require("tconfig")
+local default_profile = tconfig.default_profile
+local env_profile = os.getenv("AWESOME_PROFILE")
+if env_profile ~= nil then
+   if tconfig.profile[env_profile] ~= nil then
+      naughty.notify({ preset = naughty.config.presets.low,
+		       title = "Welcome to Awesome!",
+		       text = "Your profile (".. env_profile ..") has been loaded!" })
+      conf = tconfig.profile[env_profile]
+   else
+      naughty.notify({ preset = naughty.config.presets.critical,
+		       title = "Undefined profile specified during startup!",
+		       text = env_profile
+			  .. " is an undefined AWESOME_PROFILE in config.toml.\n"
+			  .. "Loading default profile." })
+      conf = default_profile
+   end
+else
+   naughty.notify({ preset = naughty.config.presets.critical,
+		    title = "No profile specified during startup!",
+		    text = "Awesome was unable to read the AWESOME_PROFILE environment variable.\n"
+		       .. "Loading default profile." })
+   conf = default_profile
+end
 
-conf = tconfig.profile.chronos
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

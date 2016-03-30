@@ -4,8 +4,17 @@
 
 -- mepholic's stuff
 local tconfig = require("tconfig")
-
-conf = tconfig.profile.chronos
+local default_profile = tconfig.default_profile
+local env_profile = os.getenv("AWESOME_PROFILE")
+if env_profile ~= nil then
+   if tconfig.profile[env_profile] ~= nil then
+      conf = tconfig.profile[env_profile]
+   else
+      conf = default_profile
+   end
+else
+   conf = default_profile
+end
 
 
 theme = {}

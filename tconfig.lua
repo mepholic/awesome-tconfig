@@ -28,5 +28,5 @@ end
 -- Put together public interface
 local tconfig = {}
 tconfig.profile = config.profiles
---local tconfig = config
+tconfig.default_profile = default_profile
 return tconfig
