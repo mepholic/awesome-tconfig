@@ -1,4 +1,4 @@
-# awesomerc
+# awesome-tconfig
 awesome 3.5 powerbar theme with toml configuration
 
 ## Synopsis
@@ -96,7 +96,12 @@ I chose ToML as the markup language, because there was a readily available, seem
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+1. If you have an existing awesome configuration directory at ~/.config/awesome, back it up and remove it
+2. Run the following command: __git clone https://github.com/mepholic/awesomerc.git ~/.config/awesome__
+3. You may want to install some of the tools and programs ran in *~/.config/awesome/autostart.lua*
+4. Configure *~/.config/awesome/config.toml* to your liking.
+5. Export an appropriate AWESOME_PROFILE to environment. Usuaully ~/.xprofile or ~/.xsession, sometimes ~/.xinitrc
+6. Restart awesome.
 
 ## Contributors
 
