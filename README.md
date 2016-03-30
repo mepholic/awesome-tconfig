@@ -20,6 +20,7 @@ so I'm putting this out here for everyone to use, contribute to, and share ideas
 ## Code Example
 
 The API is simple:
+
 ```lua
 local tconfig = require("tconfig")
 local default_profile = tconfig.default_profile
@@ -30,6 +31,7 @@ default_profile is a table a variables defining the default configuration.
 Other profiles can be created, based on the default profile; any variable not set in a profile will be default.
 
 In this example, we'll write a default config and two profiles to config.toml
+
 '''
 [default_profile]
 cfg_dir = "/home/user/.config/awesome/"
