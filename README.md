@@ -30,7 +30,7 @@ default_profile is a table a variables defining the default configuration.
 Other profiles can be created, based on the default profile; any variable not set in a profile will be default.
 
 In this example, we'll write a default config and two profiles to config.toml
-'''toml
+'''
 [default_profile]
 cfg_dir = "/home/user/.config/awesome/"
 theme_dir = "powerarrowf/"
