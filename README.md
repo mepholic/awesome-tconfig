@@ -97,7 +97,7 @@ I chose ToML as the markup language, because there was a readily available, seem
 ## Installation
 
 1. If you have an existing awesome configuration directory at ~/.config/awesome, back it up and remove it
-2. Run the following command: __git clone https://github.com/mepholic/awesomerc.git ~/.config/awesome__
+2. Run the following command: __git clone https://github.com/mepholic/awesome-tconfig.git ~/.config/awesome__
 3. You may want to install some of the tools and programs ran in *~/.config/awesome/autostart.lua*
 4. Configure *~/.config/awesome/config.toml* to your liking.
 5. Export an appropriate AWESOME_PROFILE to environment. Usuaully ~/.xprofile or ~/.xsession, sometimes ~/.xinitrc
