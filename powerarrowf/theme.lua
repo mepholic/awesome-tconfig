@@ -3,6 +3,7 @@
 ---------------------------
 
 -- mepholic's stuff
+local conf = { }
 local tconfig = require("tconfig")
 local default_profile = tconfig.default_profile
 local env_profile = os.getenv("AWESOME_PROFILE")

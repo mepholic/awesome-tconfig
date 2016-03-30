@@ -16,6 +16,8 @@ if_wlan = ""
 alsa_name = "Master"
 tags = [ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/candy_bean_wallpaper.jpg" ]
+xrandr_cfg = ""
+xrandr_pri = ""
 
 
 [profiles]
@@ -40,3 +42,5 @@ terminal = "urxvt"
 fs_mon = "/"
 tags = [ [ "web", "mail", "bim", "slack", "misc", "misc" ], [ "term", "term", "voip", "remote", "misc", "misc" ] ]
 wallpaper = [ "/home/dtheisen/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg", "/home/dtheisen/.config/awesome/res/SpaceSlothSunglasses.jpg" ]
+xrandr_cfg = [ [ "HDMI-1", "DVI-I-1", "--right-of", "HDMI-1" ] ]
+xrandr_pri = "HDMI-1"
