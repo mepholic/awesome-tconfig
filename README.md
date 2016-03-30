@@ -100,8 +100,8 @@ Provide code examples and explanations of how to get the project.
 
 ## Contributors
 
-Maintainer: mepholic
-Fork from: esn89/powerline-dark
+  + Maintainer: mepholic
+  + Fork from: esn89/powerline-dark
 
 Contact me on freenode, PM mepholic
 
