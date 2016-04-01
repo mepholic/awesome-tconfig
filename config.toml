@@ -26,7 +26,7 @@ xrandr_pri = ""
 if_wired = "em1"
 tags = [ [ "term", "web", "mail", "chat", "bim", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
-xrandr_pri = "em1"
+xrandr_pri = "DVI-I-2"
 
 [profiles.darklord]
 terminal = "urxvt"
