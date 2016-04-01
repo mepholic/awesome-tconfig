@@ -24,13 +24,13 @@ xrandr_pri = ""
 
 [profiles.chronos]
 if_wired = "em1"
-tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
+tags = [ [ "term", "web", "mail", "chat", "bim", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
+xrandr_pri = "em1"
 
 [profiles.darklord]
 terminal = "urxvt"
 fs_mon = "/"
-if_wired = "eth0"
 if_wlan = "wlan0"
 batt_name = "BAT1"
 tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
