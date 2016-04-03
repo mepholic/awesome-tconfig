@@ -488,7 +488,7 @@ awful.key({     }, "XF86AudioMute", function() awful.util.spawn("amixer set Mast
     awful.key({ modkey },            "p", function() menubar.show() end),
 
     -- dmenu
-    awful.key({ modkey },            "d", function ()
+    awful.key(nil,            "Menu", function ()
 	  local f_reader = io.popen( "dmenu_path | dmenu -b -fn 'Inconsolata' -p '>' -l 5 -nb '".. beautiful.bg_normal .."' -nf '".. beautiful.fg_normal .."' -sb '" .. beautiful.bg_focus .. "' -sf '" .. beautiful.fg_focus .. "'")
 	  local command = assert(f_reader:read('*a'))
 	  f_reader:close()
