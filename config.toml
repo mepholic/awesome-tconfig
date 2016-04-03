@@ -23,7 +23,8 @@ xrandr_pri = ""
 [profiles]
 
 [profiles.chronos]
-if_wired = "em1"
+terminal = "urxvt"
+if_wired = "enp2s0"
 tags = [ [ "term", "web", "mail", "chat", "bim", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
 xrandr_pri = "DVI-I-2"
