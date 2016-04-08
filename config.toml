@@ -25,6 +25,7 @@ xrandr_pri = ""
 [profiles.chronos]
 terminal = "urxvt"
 if_wired = "enp2s0"
+browser = "google-chrome-unstable"
 tags = [ [ "term", "web", "mail", "chat", "bim", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
 xrandr_pri = "DVI-I-2"
