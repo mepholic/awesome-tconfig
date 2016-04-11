@@ -29,6 +29,7 @@ browser = "google-chrome-unstable"
 tags = [ [ "term", "web", "mail", "chat", "bim", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
 xrandr_pri = "DVI-I-2"
+awful_rules = false
 
 [profiles.darklord]
 terminal = "urxvt"
@@ -37,6 +38,7 @@ if_wlan = "wlan0"
 batt_name = "BAT1"
 tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
+awful_rules = false
 
 [profiles.work]
 cfg_dir = "/home/dtheisen/.config/awesome/"
