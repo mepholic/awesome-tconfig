@@ -45,3 +45,4 @@ tags = [ [ "web", "mail", "bim", "slack", "misc", "misc" ], [ "term", "term", "v
 wallpaper = [ "/home/dtheisen/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg", "/home/dtheisen/.config/awesome/res/SpaceSlothSunglasses.jpg" ]
 xrandr_cfg = [ [ "HDMI-1", "DVI-I-1", "--right-of", "HDMI-1" ] ]
 xrandr_pri = "HDMI-1"
+awful_rules = false

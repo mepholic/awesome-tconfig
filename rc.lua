@@ -580,25 +580,102 @@ root.keys(globalkeys)
 
 -- {{{ Rules
 awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
-                     keys = clientkeys,
-                     buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    { rule = { class = "Msgcompose", class = "Icedove" },
-      properties = { floating = true} },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+   -- All clients will match this rule.
+   { rule = { },
+     properties = { border_width = beautiful.border_width,
+		    border_color = beautiful.border_normal,
+		    focus = awful.client.focus.filter,
+		    keys = clientkeys,
+		    buttons = clientbuttons } },
+   { rule = { class = "MPlayer" },
+     properties = { floating = true } },
+   { rule = { class = "pinentry" },
+     properties = { floating = true } },
+   { rule = { class = "linphone" },
+     properties = { floating = true } },
+   { rule = { class = "Msgcompose", "Icedove" },
+     properties = { floating = true} }
 }
+
+-- Rules from config
+if env_profile ~= nil and conf['awful_rules'] ~= false then
+   for rule_num in pairs(conf.awful_rules) do
+      -- get config rule
+      local conf_rule = conf.awful_rules[rule_num]
+      -- initialize real rule table
+      local real_rule = { rule = {}, properties = {} };
+      
+      -- check for active rules
+      local active = { rule_all = false, rule_any = false,
+		       except_all = false, except_any = false}
+      if conf_rule.rule_all ~= nil then active['rule_all'] = true end
+      if conf_rule.rule_any ~= nil then active['rule_any'] = true end
+      if conf_rule.except_all ~= nil then active['except_all'] = true end
+      if conf_rule.except_any ~= nil then active['except_any'] = true end
+      
+      -- initialize conflict table
+      local conflict = { rules = false, exceptions = false}
+      
+      -- check for conflicting rules
+      if active['rule_all'] and active['rule_any'] then
+	 naughty.notify({ preset = naughty.config.presets.critical,
+			  title = "Conflicting Awful rules!",
+			  text = "You have some conflicting Awful rules.\n"
+			     .. "Please specify only one of either rule_all or rule_any per rule." })
+	 conflict['rules'] = true
+      end
+      
+      -- check for conflicting exceptions
+      if active['except_all'] and active['except_any'] then
+	 naughty.notify({ preset = naughty.config.presets.critical,
+			  title = "Conflicting Awful rules!",
+			  text = "You have some conflicting Awful rule exceptions.\n"
+			     .. "Please specify only one of either except_all or except_any per rule." })
+	 conflict['exceptions'] = true
+      end
+      
+      -- parse rules
+      if conflict['rules'] == false and conflict['exceptions'] == false then
+	 for rule_type in pairs(active) do
+	    if active[rule_type] == true then
+	       -- fix rule names
+	       local rule_dest = rule_type;
+	       if rule_type == 'rule_all' then rule_dest = 'rule'
+	       elseif rule_type == 'except_all' then rule_dest = 'except' end
+	       
+	       -- copy rule properties
+	       for rule_prop in pairs(conf_rule[rule_type]) do
+		  real_rule[rule_dest] = conf_rule[rule_type][rule_prop] 
+	       end
+	    end
+	 end
+      end
+      
+      -- check for loc to set the window location
+      if conf_rule.loc ~= nil then
+	 local screen = conf_rule.loc.screen
+	 local tag    = conf_rule.loc.tag
+	 
+	 if screen ~= nil and tag ~= nil then
+	    real_rule['properties']['tag'] = tags[screen][tag]
+	 elseif screen ~= nil then
+	    real_rule['properties']['tag'] = tags[screen][1]
+	 elseif tag ~= nil then
+	    real_rule['properties']['tag'] = tags[1][tag]
+	 end
+      end
+      
+      -- check for additional properties
+      if conf_rule.props ~= nil then
+	 for key in pairs(conf_rule.props) do
+	    real_rule['properties'][key] = conf_rule['props'][key]
+	 end
+      end
+      
+      -- insert rule
+      table.insert(awful.rules.rules, real_rule)
+   end   
+end
 -- }}}
 
 -- {{{ Signals
