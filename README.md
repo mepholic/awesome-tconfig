@@ -103,6 +103,9 @@ I chose ToML as the markup language, because there was a readily available, seem
 5. Export an appropriate AWESOME_PROFILE to environment. Usuaully ~/.xprofile or ~/.xsession, sometimes ~/.xinitrc
 6. Restart awesome.
 
+## Screenshots
+![#1](https://raw.githubusercontent.com/mepholic/awesome-tconfig/master/screenshots/Awesome35_powerarrow_mod-1.png)
+
 ## Contributors
 
   + Maintainer: mepholic
