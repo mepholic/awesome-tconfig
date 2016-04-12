@@ -3,12 +3,13 @@
 cfg_dir = "/home/mepholic/.config/awesome/"
 theme_dir = "powerarrowf/"
 theme_script = "theme.lua"
+panel_font = "Inconsolata 11"
 panel_size = "16"
 panel_pos = "top"
+titlebars = false
 browser = "google-chrome"
 editor = "emacs"
 terminal = "urxvt256c"
-font = "Inconsolata 11"
 batt_name = ""
 fs_mon = "/home"
 if_wired = "eth0"
@@ -16,9 +17,8 @@ if_wlan = ""
 alsa_name = "Master"
 tags = [ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/candy_bean_wallpaper.jpg" ]
-xrandr_cfg = ""
-xrandr_pri = ""
-
+xrandr_cfg = false
+xrandr_pri = false
 
 [profiles]
 
@@ -49,3 +49,20 @@ wallpaper = [ "/home/dtheisen/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg
 xrandr_cfg = [ [ "HDMI-1", "DVI-I-1", "--right-of", "HDMI-1" ] ]
 xrandr_pri = "HDMI-1"
 awful_rules = false
+
+[theme]
+font           = "Inconsolata 10"
+
+bg_normal      = "#222222"
+bg_focus       = "#1E2320"
+bg_urgent      = "#BC717A"
+bg_systray     = "#222222"
+
+fg_normal      = "#AAAAAA"
+fg_focus       = "#0099CC"
+fg_urgent      = "#3F3F3F"
+
+border_width   = 1
+border_normal  = "#000000"
+border_focus   = "#535d6c"
+border_marked  = "#91231c"

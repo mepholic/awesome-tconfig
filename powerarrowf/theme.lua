@@ -17,27 +17,10 @@ else
    conf = default_profile
 end
 
+-- pull some theme settings from toml config
+theme = tconfig.theme
 
-theme = {}
-
--- Todo:  Change the $USER to yourself.
 pathToConfig = conf.cfg_dir
-
-theme.font          = "sans 8"
-
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#1E2320"
-theme.bg_urgent     = "#3F3F3F"
-theme.bg_systray    = theme.bg_normal
-
-theme.fg_normal     = "#AAAAAA"
-theme.fg_focus      = "#0099CC"
-theme.fg_urgent     = "#3F3F3F"
-
-theme.border_width  = 1
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -142,7 +125,7 @@ theme.cpuicon = pathToConfig .. "powerarrowf/icons/cpu.png"
 --{{ For the memory icon }} --
 theme.mem = pathToConfig .. "powerarrowf/icons/mem.png"
 
---{{ For the memory icon }} --
+--{{ For the mail icon }} --
 theme.mail = pathToConfig .. "powerarrowf/icons/mail.png"
 theme.mailopen = pathToConfig .. "powerarrowf/icons/mailopen.png"
 
