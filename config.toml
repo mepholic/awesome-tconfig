@@ -22,15 +22,6 @@ xrandr_pri = false
 
 [profiles]
 
-[profiles.chronos]
-terminal = "urxvt"
-if_wired = "enp2s0"
-browser = "google-chrome-unstable"
-tags = [ [ "term", "web", "mail", "chat", "bim", "misc", "misc", "music" ] ]
-wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
-xrandr_pri = "DVI-I-2"
-awful_rules = false
-
 [profiles.darklord]
 terminal = "urxvt"
 fs_mon = "/"
@@ -49,6 +40,21 @@ wallpaper = [ "/home/dtheisen/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg
 xrandr_cfg = [ [ "HDMI-1", "DVI-I-1", "--right-of", "HDMI-1" ] ]
 xrandr_pri = "HDMI-1"
 awful_rules = false
+
+[profiles.chronos]
+terminal = "urxvt"
+if_wired = "enp2s0"
+browser = "google-chrome-unstable"
+tags = [ [ "term", "web", "mail", "chat", "work", "misc", "misc", "music" ] ]
+wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
+xrandr_pri = "DVI-I-2"
+awful_rules = false
+
+#[[profiles.chronos.awful_rules]]
+#	[[profiles.chronos.awful_rules.rule_all]]
+#	class = [ "urxvt" ]
+#	[[profiles.chronos.awful_rules.loc]]
+#	tag = 1
 
 [theme]
 font           = "Inconsolata 10"
