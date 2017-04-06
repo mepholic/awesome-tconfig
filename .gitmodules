@@ -1,3 +1,6 @@
 [submodule "lua-toml"]
-	   path = lua-toml
-	   url = https://github.com/jonstoler/lua-toml.git
+	path = lua-toml
+	url = https://github.com/jonstoler/lua-toml.git
+[submodule "vicious"]
+	path = vicious
+	url = https://github.com/Mic92/vicious.git

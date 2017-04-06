@@ -193,8 +193,8 @@ vicious.register(netwidget, vicious.widgets.net, function(widget, args)
                     else
                        return ""
                     end
-                    return '<span background="#C2C2A4" font="'.. font ..
-                       '"> <span font ="'.. font ..'" color="#FFFFFF">'..
+                    return '<span background="#C2C2A4">' ..
+		       '<span font ="' .. font .. '" color="#FFFFFF">' ..
                        args["{"..interface.." down_kb}"]..'kbps'..'</span></span>'
                                                  end, -- ^ func
                  10) -- end vic.reg
@@ -223,14 +223,14 @@ batwidget = wibox.widget.textbox()
 if conf.batt_name == "" then
    -- TODO: This surely isn't right, if there's no battery, just display text
    vicious.register( batwidget, vicious.widgets.bat,
-                     '<span background="#92B0A0" font="'.. font ..'"><span font="'..
-                        conf.panel_font ..'" color="#FFFFFF" background="#92B0A0">$1 '..
+                     '<span background="#92B0A0"><span font="' .. font ..
+                        '" color="#FFFFFF" background="#92B0A0">$1 ' ..
                         '</span></span>',
                      30, conf.batt_name )
 else
    vicious.register( batwidget, vicious.widgets.bat,
-                     '<span background="#92B0A0" font="'.. font ..'"><span font="'..
-                        conf.panel_font ..'" color="#FFFFFF" background="#92B0A0">$1$2% '..
+                     '<span background="#92B0A0"><span font="' .. font ..
+                        '" color="#FFFFFF" background="#92B0A0">$1$2% ' ..
                         '</span></span>',
                      30, conf.batt_name )
 end
@@ -239,9 +239,9 @@ end
 fswidget = wibox.widget.textbox()
 
 vicious.register(fswidget, vicious.widgets.fs,
-                 '<span background="#D0785D" font="'.. font ..'"> <span font="'..
-                    font ..'" color="#EEEEEE">${'.. conf.fs_mon ..' used_gb}/${'..
-                    conf.fs_mon ..' avail_gb} GB </span></span>', 
+                 '<span background="#D0785D"><span font="' .. font ..
+                    '" color="#EEEEEE">${' .. conf.fs_mon .. ' used_gb}/${' ..
+                    conf.fs_mon .. ' avail_gb} GB </span></span>', 
                  800)
 
 fsicon = wibox.widget.imagebox()
@@ -250,8 +250,8 @@ fsicon:set_image(beautiful.fsicon)
 ----{{--| Volume / volume icon |----------
 volume = wibox.widget.textbox()
 vicious.register(volume, vicious.widgets.volume,
-                 '<span background="#4B3B51" font="'.. font ..'"><span font="'..
-                    font ..'" color="#EEEEEE"> Vol:$1 </span></span>',
+                 '<span background="#4B3B51"><span font="' .. font ..
+                    '" color="#EEEEEE"> Vol:$1 </span></span>',
                  10, conf.alsa_name)
 
 volumeicon = wibox.widget.imagebox()
@@ -275,8 +275,8 @@ vicious.register(volumeicon, vicious.widgets.volume, function(widget, args)
 cpuwidget = wibox.widget.textbox()
 
 vicious.register(cpuwidget, vicious.widgets.cpu,
-                 '<span background="#4B696D" font="'.. font ..'"> <span font="'..
-                    font ..'" color="#DDDDDD">$1% </span></span>',
+                 '<span background="#4B696D"><span font="' .. font ..
+                    '" color="#DDDDDD">$1% </span></span>',
                  5)
 
 cpuicon = wibox.widget.imagebox()
@@ -286,8 +286,8 @@ cpuicon:set_image(beautiful.cpuicon)
 memwidget = wibox.widget.textbox()
 
 vicious.register(memwidget, vicious.widgets.mem,
-                 '<span background="#777E76" font="'.. font ..'"> <span font="'..
-                    font ..'" color="#EEEEEE" background="#777E76">$2MB '..
+                 '<span background="#777E76"><span font="' .. font ..
+                    '" color="#EEEEEE" background="#777E76">$2 MB ' ..
                     '</span></span>',
                  20)
 
@@ -546,9 +546,9 @@ globalkeys = awful.util.table.join(
    -- dmenu
    awful.key(nil,            "Menu", function ()
                 local f_reader = io.popen(
-                   "dmenu_path | dmenu -b -fn '".. font .."' -p '>' -l 5 -nb '"..
-                      beautiful.bg_normal .."' -nf '".. beautiful.fg_normal .."' -sb '"..
-                      beautiful.bg_focus .."' -sf '".. beautiful.fg_focus .."'"
+                   "dmenu_path | dmenu -b -fn '" .. font .. "' -p '>' -l 5 -nb '" ..
+                      beautiful.bg_normal .. "' -nf '" .. beautiful.fg_normal .. "' -sb '" ..
+                      beautiful.bg_focus .. "' -sf '" .. beautiful.fg_focus .. "'"
                 )  -- dmenu skinned after your beautiful theme
                 
                 local command = assert(f_reader:read('*a'))

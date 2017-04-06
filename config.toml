@@ -3,7 +3,7 @@
 cfg_dir = "/home/mepholic/.config/awesome/"
 theme_dir = "powerarrowf/"
 theme_script = "theme.lua"
-panel_font = "Inconsolata 11"
+panel_font = "Noto Mono"
 panel_size = "16"
 panel_pos = "top"
 titlebars = false
@@ -22,32 +22,13 @@ xrandr_pri = false
 
 [profiles]
 
-[profiles.darklord]
+[profiles.cataclysm]
 terminal = "urxvt"
 fs_mon = "/"
 if_wlan = "wlan0"
 batt_name = "BAT1"
-tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ] ]
+tags = [ [ "term", "web", "chat", "mail", "misc", "misc", "music" ], ["term", "aux1", "aux2", "aux3"] ]
 wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
-awful_rules = false
-
-[profiles.work]
-cfg_dir = "/home/dtheisen/.config/awesome/"
-terminal = "urxvt"
-fs_mon = "/"
-tags = [ [ "web", "mail", "bim", "slack", "misc", "misc" ], [ "term", "term", "voip", "remote", "misc", "misc" ] ]
-wallpaper = [ "/home/dtheisen/.config/awesome/res/SpaceStationPanelsEVAEarth.jpg", "/home/dtheisen/.config/awesome/res/SpaceSlothSunglasses.jpg" ]
-xrandr_cfg = [ [ "HDMI-1", "DVI-I-1", "--right-of", "HDMI-1" ] ]
-xrandr_pri = "HDMI-1"
-awful_rules = false
-
-[profiles.chronos]
-terminal = "urxvt"
-if_wired = "enp2s0"
-browser = "google-chrome-unstable"
-tags = [ [ "term", "web", "mail", "chat", "work", "misc", "misc", "music" ] ]
-wallpaper = [ "/home/mepholic/.config/awesome/res/club_aurigia.jpg" ]
-xrandr_pri = "DVI-I-2"
 awful_rules = false
 
 #[[profiles.chronos.awful_rules]]
@@ -57,7 +38,7 @@ awful_rules = false
 #	tag = 1
 
 [theme]
-font           = "Inconsolata 10"
+font           = "Noto Mono 12"
 
 bg_normal      = "#222222"
 bg_focus       = "#1E2320"

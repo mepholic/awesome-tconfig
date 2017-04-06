@@ -72,5 +72,5 @@ run_once("xautolock", "-detectsleep -time 5 -locker \"i3lock -t -i ".. conf.cfg_
             "-t 10000 -- 'LOCKING screen in 30 seconds'\"")
 
 -- Applets
-run_once("nm-applet")
+--run_once("nm-applet")
 
